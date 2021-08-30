@@ -4,8 +4,9 @@ metadata:
 projects:
   - name: spring-boot-http-booster
     source:
-      location: 'https://devfile-registry-openshift-workspaces.apps.cluster-7328.7328.sandbox1575.opentlc.com/resources/spring-boot-http-booster-spring-boot-http-booster-sb-2.3.x.zip'
-      type: zip
+      location: 'https://github.com/likhia/springboot-log.git'
+      startPoint: master
+      type: git
 components:
   - id: redhat/java8/latest
     type: chePlugin
