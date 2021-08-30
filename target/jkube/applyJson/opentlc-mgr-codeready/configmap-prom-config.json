@@ -1,0 +1,43 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "ConfigMap",
+  "metadata" : {
+    "creationTimestamp" : "2021-08-24T06:29:32Z",
+    "labels" : {
+      "app" : "rest-http",
+      "group" : "dev.snowdrop.example",
+      "provider" : "jkube",
+      "version" : "2.3.2-1-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:data" : {
+          "." : { },
+          "f:prometheus.yml" : { }
+        },
+        "f:metadata" : {
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2021-08-24T06:29:32Z"
+    } ],
+    "name" : "prom-config",
+    "namespace" : "opentlc-mgr-codeready",
+    "resourceVersion" : "1220185",
+    "selfLink" : "/api/v1/namespaces/opentlc-mgr-codeready/configmaps/prom-config",
+    "uid" : "6f13df16-ff35-4962-bffd-0112986712db"
+  },
+  "data" : {
+    "prometheus.yml" : "global:\n  scrape_interval:     5s\n  evaluation_interval: 5s\n\nscrape_configs:\n  - job_name: 'rest-http'\n    metrics_path: '/metrics'\n    static_configs:\n    - targets: ['rest-http.app.svc.cluster.local:8080']\n\n"
+  }
+}
